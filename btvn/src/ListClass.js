@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 export default function ListClass() {
 	let [category, setCategory] = useState(["Lớp 1", "Lớp 2"]);
@@ -6,9 +6,9 @@ export default function ListClass() {
 	let [student, setStudent] = useState([
 		{
 			name: "Tên",
-			age: "Tuổi",
-			lop: "Lớp",
-			point: "Điểm",
+			age: 20,
+			lop: "CH9D",
+			point: 100,
 		},
 	]);
 	let [newStudent, setNewStudent] = useState({
@@ -17,6 +17,13 @@ export default function ListClass() {
 		lop: "",
 		point: "",
 	});
+	let [topscore, setTopScore] = useState([]);
+	let [sort, setSort] = useState("desc");
+	let handldeSortByPoint = () => {
+		let sorted = [...student].filter((s) => !isNaN(Number(s.point))).sort((a, b) => (sort === "tang" ? a.point - b.point : b.point - a.point));
+		setStudent(sorted);
+		setSort(sort === "tang" ? "desc" : "tang");
+	};
 
 	let handldeAddClass = () => {
 		if (newCategory && !category.includes(newCategory)) {
@@ -34,12 +41,21 @@ export default function ListClass() {
 	let handldeDeleteStudent = (students) => {
 		setStudent(student.filter((s) => s !== students));
 	};
+	let handldeShowTop3 = () => {
+		let sorted = [...student]
+			.filter((s) => !isNaN(Number(s.point)))
+			.sort((a, b) => b.point - a.point)
+			.slice(0, 3);
+		setTopScore(sorted);
+	};
+	let handle;
 
 	return (
 		<>
 			<h1>Dánh sách lớp học</h1>
 			<input type="text" value={newCategory} placeholder="Thêm lớp" onChange={(e) => setNewCategory(e.target.value)} />
 			<button onClick={() => handldeAddClass()}>Thêm lớp</button>
+
 			<h2>
 				<ul>
 					{category.map((cl) => (
@@ -50,6 +66,16 @@ export default function ListClass() {
 				</ul>
 			</h2>
 			<h1>Danh sách học viên</h1>
+			<h5>Top 3 học sinh</h5>
+			<button onClick={() => handldeShowTop3()}>Top3 nè</button>
+			<ul>
+				{topscore.map((s, index) => (
+					<li>
+						{index + 1}-{s.name}-{s.age}-{s.lop}-{s.point}
+					</li>
+				))}
+			</ul>
+
 			<input type="text" value={newStudent.name} placeholder="Thêm tên" onChange={(e) => setNewStudent({ ...newStudent, name: e.target.value })} />
 			<input type="text" value={newStudent.age} placeholder="Thêm tuổi" onChange={(e) => setNewStudent({ ...newStudent, age: e.target.value })} />
 			<select value={newStudent.lop} onChange={(e) => setNewStudent({ ...newStudent, lop: e.target.value })}>
@@ -72,6 +98,7 @@ export default function ListClass() {
 					))}
 				</ul>
 			</h2>
+			<button onClick={()=>handldeSortByPoint()}>Sắp xếp theo điểm ({sort === "tang" ? "Tăng" : "Giảm"})</button>
 		</>
 	);
 }
