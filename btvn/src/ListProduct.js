@@ -4,10 +4,15 @@ export default function ListProduct() {
 	const [products, setProducts] = useState([
 		{ name: "C2", prices: 10000, volume: 1 },
 		{ name: "Bò húc", prices: 12000, volume: 1 },
+        { name: "Bò húc", prices: 15000, volume: 1 },
+        { name: "Bò húc", prices: 14000, volume: 1 },
+        { name: "Bò húc", prices: 11000, volume: 1 }
+
 	]);
 	const [sort, setSort] = useState("");
 	const [search, setSearch] = useState("");
 	const [filteredProduct, setFilteredProduct] = useState(products);
+    
 
 	const handleSort = (order) => {
 		let sorted = [...filteredProduct].sort((a, b) => {
@@ -22,12 +27,16 @@ export default function ListProduct() {
         );
         setFilteredProduct(result);
 	};
+    const handldeReset = ()=>{
+        setFilteredProduct(products)
+    }
 	return (
 		<> 
             <input type="text" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder="Nhập đồ cần tìm" ></input> <hr></hr>
             <button onClick={()=>handldeSearch()}>Tìm</button>
 			<button onClick={() => handleSort("up")}> Giá tăng dần </button>
 			<button onClick={() => handleSort("down")}> Giá giảm dần </button>
+            <button onClick={()=>handldeReset()}>reset</button>
             <ul>{filteredProduct.map((product)=>(
                     <li>
                         {product.name} - {product.prices} - {product.volume}
