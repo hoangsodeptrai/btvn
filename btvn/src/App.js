@@ -3,13 +3,15 @@ import './App.css';
 import ListProduct from './ListProduct';
 import ProductList from './ProductList';
 import ListClass from './ListClass';
+import HomeStayList from './HomeStayList';
 
 function App() {
   return (
     <div className="App">
       {/* <ListProduct/> */}
       {/* <ProductList/> */}
-      <ListClass/>
+      {/* <ListClass/> */}
+      <HomeStayList/>
     </div>
   );
 }

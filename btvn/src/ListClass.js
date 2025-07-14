@@ -98,7 +98,7 @@ export default function ListClass() {
 					))}
 				</ul>
 			</h2>
-			<button onClick={()=>handldeSortByPoint()}>Sắp xếp theo điểm ({sort === "tang" ? "Tăng" : "Giảm"})</button>
+			<button onClick={()=>handldeSortByPoint()}>Sắp xếp theo điểm </button>
 		</>
 	);
 }
