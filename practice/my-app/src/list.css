@@ -1,0 +1,90 @@
+.header {
+	width: 100%;
+	height: 30px;
+	background-color: blueviolet;
+	display: flex;
+}
+.nut {
+	margin-top: 5px;
+	margin-left: 5px;
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+.left {
+	width: 50%;
+	height: 30px;
+}
+.right {
+	width: 50%;
+	height: 30px;
+
+	justify-content: end;
+	display: flex;
+	align-items: center;
+}
+.nut-1 {
+	border: none;
+	background-color: transparent;
+	color: white;
+}
+.nut-2 {
+	border: none;
+	background-color: transparent;
+	color: rgb(4, 4, 4);
+}
+.login-page {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.login {
+	border-radius: 8px;
+	background-color: rgb(226, 218, 218);
+}
+.login-1 {
+	border-radius: 8px;
+	background-color: rgb(226, 218, 218);
+	width: 80px;
+	color: rgb(97, 170, 238);
+}
+.register-page {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.register {
+	border-radius: 8px;
+	background-color: rgb(226, 218, 218);
+}
+.register-1 {
+	border-radius: 8px;
+	background-color: rgb(226, 218, 218);
+	width: 80px;
+	color: rgb(97, 170, 238);
+}
+.midder {
+	width: 100%;
+	height: 30px;
+	display: flex;
+}
+.user {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+.left-1{
+	width: 30%;
+	height: 100%;
+}
+.right-1{
+	width: 70%;
+	height: 100%;
+	
+}
