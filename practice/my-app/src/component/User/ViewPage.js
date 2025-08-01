@@ -84,7 +84,7 @@ export default function ViewPage() {
 				<br />
 				<input type="text" className="login" value={newReviews.score} name="score" onChange={handleOnChange} placeholder="Nhập score " /> <br />
 				<input type="text" className="login" value={newReviews.comment} name="comment" onChange={handleOnChange} placeholder="Nhập comment " /> <br />
-				<input type="text" className="login" value={newReviews.date} name="date" onChange={handleOnChange} placeholder="Nhập criteria " /> <br />
+				<input type="text" className="login" value={newReviews.date} name="date" onChange={handleOnChange} placeholder="Nhập date " /> <br />
 				<button className="search-input1" onClick={() => handleAddReviews()}>
 					Thêm
 				</button>

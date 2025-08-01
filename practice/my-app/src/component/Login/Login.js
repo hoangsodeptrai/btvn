@@ -22,6 +22,7 @@ export default function Login() {
 	function handleLogin() {
 		const userCheck = list.find((item) => item.username === newUser.username && item.password === newUser.password);
 		if (userCheck) {
+			localStorage.setItem('crrUsername',JSON.stringify(userCheck))
 			alert("Đăng nhập thành công");
 			navigate("/");
 		} else {
