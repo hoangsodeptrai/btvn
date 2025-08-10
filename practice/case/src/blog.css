@@ -1,0 +1,36 @@
+.midder {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	padding: 20px;
+	justify-content: flex-start;
+}
+.big-div {
+	background-image: url("https://i.pinimg.com/1200x/5b/69/e9/5b69e90aef9a6a53f54dc1bb9d7575a0.jpg");
+	background-size: cover; /* ảnh phủ kín */
+	background-position: center; /* căn giữa */
+	background-repeat: no-repeat;
+	height: 1000px;
+}
+.card {
+	margin-left: 35px;
+}
+.custom-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.main-content {
+	padding-top: 70px; /* hoặc đúng chiều cao navbar */
+}
+.navba {
+	border: none;
+	background: none;
+}
+.edit-button {
+	margin-top: 10px;
+}
